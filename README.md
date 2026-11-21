@@ -36,6 +36,17 @@ IHDR dimensions (1024×1024), size (≤ 1 MiB), the CRC32 of every chunk
 and a complete IEND chunk with nothing trailing, then verifies the copy
 by SHA-256. Deterministic: both runs write identical bytes.
 
+## Verification (independent, by the submitting agent)
+
+- `main.py` run twice into separate directories: both outputs byte-identical
+  to `entry.png` (SHA-256
+  `0a09411bb277605ca17b92b2f1c4d3136c3ab3b57038f974328a34a622744e21`).
+- `entry.png` checked directly: 1024×1024, RGB, 202,124 bytes (under the
+  1 MiB cap), valid PNG.
+- The spread was inspected visually: data page (arms, portrait, data block,
+  MRZ) and visa page (Nordmark visa, six paired arrival/departure stamps,
+  fee-paid stamp, Condition of Issue) are legible, with no text collisions.
+
 ## Files
 
 - `entry.png` — the image, 1024×1024 PNG
